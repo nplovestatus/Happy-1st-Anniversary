@@ -3,1311 +3,637 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>नोबल ❤️ प्रदिप | Our First Anniversary</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 
-html{
-    scroll-behavior:smooth;
+:root{
+  --pink:#ff5d91;
+  --deep:#6f163d;
+  --rose:#c21d58;
+  --soft:#fff0f6;
+  --cream:#fff9fb;
+  --text:#542638;
+  --gold:#d7a44b;
 }
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#fff7fa;
-    color:#542638;
-    overflow-x:hidden;
+  font-family:"Noto Sans Devanagari",sans-serif;
+  background:var(--cream);color:var(--text);overflow-x:hidden
 }
+a{text-decoration:none}
+button{font-family:inherit}
 
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-.hearts{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:100;
-    overflow:hidden;
-}
-
+/* floating hearts */
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:100;overflow:hidden}
 .heart{
-    position:absolute;
-    bottom:-40px;
-    animation:heartFloat 8s linear infinite;
-    opacity:0;
+  position:absolute;bottom:-50px;opacity:0;
+  animation:heartFloat 9s linear infinite;
+  filter:drop-shadow(0 4px 8px #ff5d9140)
 }
-
 @keyframes heartFloat{
-    0%{
-        transform:translateY(0) scale(.7) rotate(0);
-        opacity:0;
-    }
-    15%{opacity:.8;}
-    100%{
-        transform:translateY(-110vh) scale(1.4) rotate(360deg);
-        opacity:0;
-    }
+  0%{transform:translateY(0) scale(.6) rotate(0);opacity:0}
+  15%{opacity:.75}100%{transform:translateY(-110vh) scale(1.4) rotate(360deg);opacity:0}
 }
 
-/* =========================
-   NAV
-========================= */
-
+/* nav */
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:90;
-    padding:14px;
-    text-align:center;
-    background:rgba(90,20,50,.82);
-    backdrop-filter:blur(12px);
+ position:fixed;top:0;width:100%;z-index:90;padding:13px 10px;
+ background:#4a0b2dcc;backdrop-filter:blur(16px);
+ border-bottom:1px solid #ffffff22;text-align:center
 }
+nav a{color:#fff;margin:0 8px;font-size:12px;font-weight:700;transition:.3s}
+nav a:hover{color:#ffd0df}
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 9px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#ffc2d6;
-}
-
-/* =========================
-   HERO
-========================= */
-
+/* hero */
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:100px 20px 50px;
-
-    background:
-    linear-gradient(rgba(100,15,55,.68),rgba(35,0,20,.82)),
-    url("photo1.jpg") center/cover;
+ min-height:100vh;display:flex;justify-content:center;align-items:center;
+ text-align:center;padding:100px 20px 60px;position:relative;overflow:hidden;
+ background:
+ linear-gradient(135deg,#3b001acc,#8e1c4ed9),
+ url("photo1.jpg") center/cover fixed
 }
-
-.hero-content{
-    color:white;
-    max-width:900px;
-    animation:fadeUp 2s ease;
+.hero:after{
+ content:"";position:absolute;inset:0;
+ background:radial-gradient(circle at center,#ffffff12,transparent 45%);
+ pointer-events:none
 }
-
-.hero-small{
-    font-size:17px;
-    letter-spacing:4px;
-    margin-bottom:20px;
-}
-
+.hero-content{color:#fff;max-width:950px;position:relative;z-index:2;animation:fadeUp 1.5s ease}
+.hero-small{font-size:14px;letter-spacing:5px;margin-bottom:18px;text-transform:uppercase}
 .hero h1{
-    font-size:64px;
-    margin-bottom:12px;
+ font-family:"Cormorant Garamond",serif;font-size:clamp(50px,8vw,88px);
+ line-height:.95;margin-bottom:15px;text-shadow:0 8px 30px #0008
 }
-
-.hero h2{
-    font-size:30px;
-    font-weight:normal;
-}
-
-.hero-names{
-    margin:25px 0;
-    font-size:34px;
-    font-weight:bold;
-}
-
+.hero-names{font-family:"Cormorant Garamond",serif;font-size:clamp(30px,5vw,48px);font-weight:700;margin:20px 0}
+.hero h2{font-size:clamp(18px,3vw,28px);font-weight:400}
 .hero-date{
-    display:inline-block;
-    padding:13px 30px;
-    border:1px solid white;
-    border-radius:50px;
-    font-size:20px;
+ display:inline-block;margin:24px 0;padding:12px 28px;border:1px solid #ffffffaa;
+ border-radius:100px;background:#ffffff12;backdrop-filter:blur(8px);font-size:18px
 }
-
-.hero p{
-    margin-top:25px;
-    font-size:19px;
-    line-height:1.8;
-}
-
+.hero p{font-size:17px;line-height:1.9}
 .btn{
-    display:inline-block;
-    margin-top:28px;
-    padding:15px 32px;
-    border-radius:50px;
-    background:#ff5d91;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+ display:inline-block;margin-top:25px;padding:14px 30px;border-radius:100px;
+ background:linear-gradient(135deg,#ff75a3,#d92564);color:#fff;font-weight:700;
+ box-shadow:0 10px 30px #d9256444;transition:.3s
 }
+.btn:hover{transform:translateY(-3px) scale(1.03)}
 
-.btn:hover{
-    transform:scale(1.08);
-    background:#ff2f70;
+.scroll{
+ position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+ color:#fff;font-size:12px;opacity:.8;z-index:3;animation:pulse 1.8s infinite
 }
+@keyframes pulse{50%{opacity:.35;transform:translateX(-50%) translateY(5px)}}
 
-/* =========================
-   GENERAL
-========================= */
-
-section{
-    padding:85px 20px;
-    text-align:center;
-}
-
+/* common */
+section{padding:90px 20px;text-align:center}
 .section-title{
-    color:#c21d58;
-    font-size:38px;
-    margin-bottom:12px;
+ font-family:"Cormorant Garamond",serif;color:var(--rose);
+ font-size:clamp(35px,5vw,52px);margin-bottom:8px
+}
+.section-subtitle{color:#795666;margin-bottom:42px}
+.soft-section{background:linear-gradient(135deg,#fff5f8,#ffeaf2)}
+.container{max-width:1100px;margin:auto}
+
+/* countdown */
+.countdown-section{background:#fff}
+.countdown{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:15px;max-width:800px;margin:auto
+}
+.time-box{
+ padding:25px 10px;border-radius:24px;background:linear-gradient(145deg,#fff,#ffe4ee);
+ box-shadow:0 12px 35px #8e1c4e18;border:1px solid #f5c4d5
+}
+.time-box span{display:block;font-size:clamp(30px,5vw,50px);font-weight:700;color:var(--rose)}
+.time-box small{color:#795666}
+.anniversary-live{
+ display:none;margin:20px auto 0;padding:18px;border-radius:20px;
+ background:linear-gradient(135deg,#7b1745,#d93670);color:#fff;font-size:22px;font-weight:700
 }
 
-.section-subtitle{
-    color:#795666;
-    margin-bottom:45px;
+/* timeline */
+.timeline{max-width:850px;margin:auto;position:relative}
+.timeline:before{
+ content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;
+ background:linear-gradient(#f6a0bc,#c21d58);transform:translateX(-50%)
 }
-
-/* =========================
-   LOVE STORY
-========================= */
-
-.story{
-    max-width:850px;
-    margin:auto;
+.timeline-item{width:50%;padding:12px 35px;position:relative;text-align:left}
+.timeline-item:nth-child(odd){margin-left:0}
+.timeline-item:nth-child(even){margin-left:50%}
+.timeline-dot{
+ position:absolute;top:25px;width:18px;height:18px;border-radius:50%;
+ background:#fff;border:5px solid var(--rose);box-shadow:0 0 0 5px #ffc9da
 }
-
-.story-card{
-    background:white;
-    margin:25px 0;
-    padding:30px;
-    border-radius:25px;
-    box-shadow:0 10px 35px rgba(150,30,80,.12);
-    text-align:left;
-    border-left:5px solid #f28aae;
-    transition:.4s;
+.timeline-item:nth-child(odd) .timeline-dot{right:-9px}
+.timeline-item:nth-child(even) .timeline-dot{left:-9px}
+.timeline-card{
+ background:#fff;padding:24px;border-radius:24px;box-shadow:0 12px 35px #8e1c4e14
 }
+.timeline-card h3{color:var(--rose);margin-bottom:8px}
 
-.story-card:hover{
-    transform:translateY(-6px);
+/* cards */
+.story{max-width:850px;margin:auto}
+.story-card,.favorite,.reason,.funny{
+ background:#fff;padding:28px;border-radius:25px;box-shadow:0 12px 35px #8e1c4e14;
+ transition:.35s
 }
-
-.story-card h3{
-    color:#c21d58;
-    margin-bottom:12px;
+.story-card{margin:20px 0;text-align:left;border-left:5px solid #f28aae}
+.story-card:hover,.favorite:hover,.reason:hover{transform:translateY(-7px)}
+.story-card h3,.favorite h3,.reason h3{color:var(--rose);margin-bottom:10px}
+.favorites,.reasons{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;max-width:1000px;margin:auto
 }
+.favorite{text-align:center}
+.favorite-icon,.reason-icon{font-size:43px;margin-bottom:10px}
 
-/* =========================
-   HER FAVORITES
-========================= */
-
-.favorites{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
-}
-
-.favorite{
-    background:white;
-    padding:30px 20px;
-    border-radius:25px;
-    box-shadow:0 8px 28px rgba(150,30,80,.12);
-    transition:.35s;
-}
-
-.favorite:hover{
-    transform:translateY(-8px);
-}
-
-.favorite-icon{
-    font-size:45px;
-    margin-bottom:12px;
-}
-
-.favorite h3{
-    color:#c21d58;
-    margin-bottom:10px;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
+/* gallery */
 .gallery{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:25px;
+ display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:auto
 }
-
 .photo-card{
-    background:white;
-    padding:12px;
-    border-radius:24px;
-    box-shadow:0 10px 30px rgba(100,20,60,.15);
-    transition:.4s;
+ background:#fff;padding:10px;border-radius:24px;box-shadow:0 12px 35px #64143c20;
+ cursor:pointer;transition:.35s
+}
+.photo-card:hover{transform:translateY(-8px) rotate(.5deg)}
+.photo-card img{width:100%;height:290px;object-fit:cover;border-radius:17px;display:block}
+.photo-card h3{color:var(--rose);margin:14px 0 7px}
+.photo-card p{line-height:1.7}
+.gallery-note{margin-top:20px;color:#866270;font-size:13px}
+
+/* lightbox */
+.lightbox{
+ display:none;position:fixed;inset:0;background:#18000dcc;z-index:500;
+ align-items:center;justify-content:center;padding:25px
+}
+.lightbox.active{display:flex}
+.lightbox img{max-width:min(92vw,900px);max-height:82vh;border-radius:18px;box-shadow:0 20px 70px #0008}
+.close-lightbox{
+ position:absolute;right:25px;top:20px;color:#fff;font-size:35px;cursor:pointer
 }
 
-.photo-card:hover{
-    transform:translateY(-8px) scale(1.02);
-}
-
-.photo-card img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    border-radius:17px;
-}
-
-.photo-card h3{
-    color:#c21d58;
-    margin:15px 0 8px;
-}
-
-.photo-card p{
-    line-height:1.7;
-}
-
-/* =========================
-   SHAYARI
-========================= */
-
-.shayari-box{
-    max-width:850px;
-    margin:auto;
-}
-
+/* shayari */
+.shayari-box{max-width:850px;margin:auto}
 .shayari{
-    background:linear-gradient(135deg,#fff,#ffe2ec);
-    padding:40px 28px;
-    margin:25px 0;
-    border-radius:30px;
-    box-shadow:0 10px 35px rgba(170,30,80,.14);
+ background:linear-gradient(135deg,#fff,#ffe1ec);padding:35px 25px;margin:20px 0;
+ border-radius:28px;box-shadow:0 12px 35px #aa1e501c
 }
+.shayari p{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.6;font-weight:600}
 
-.shayari p{
-    font-size:21px;
-    line-height:2;
-    font-style:italic;
-}
-
-/* =========================
-   SONG
-========================= */
-
-.song-section{
-    background:linear-gradient(135deg,#fff0f5,#ffe0eb);
-}
-
+/* music */
+.song-section{background:linear-gradient(135deg,#fff0f5,#ffe0eb)}
 .song-box{
-    max-width:650px;
-    margin:auto;
-    padding:45px 25px;
-    background:linear-gradient(135deg,#8e1c4e,#d93670);
-    color:white;
-    border-radius:32px;
-    box-shadow:0 15px 45px rgba(80,0,30,.25);
+ max-width:650px;margin:auto;padding:42px 25px;background:linear-gradient(135deg,#7d1647,#d93670);
+ color:#fff;border-radius:34px;box-shadow:0 20px 50px #50001f40
 }
-
 .song-photo{
-    width:160px;
-    height:160px;
-    margin:auto auto 25px;
-    border-radius:50%;
-    background:url("photo2.jpg") center/cover;
-    border:5px solid white;
-    animation:rotatePhoto 8s linear infinite;
-    animation-play-state:paused;
+ width:165px;height:165px;margin:auto auto 20px;border-radius:50%;
+ background:url("photo2.jpg") center/cover;border:5px solid #fff;
+ box-shadow:0 0 0 8px #ffffff22;animation:rotatePhoto 8s linear infinite;animation-play-state:paused
 }
-
-@keyframes rotatePhoto{
-    from{transform:rotate(0);}
-    to{transform:rotate(360deg);}
+@keyframes rotatePhoto{to{transform:rotate(360deg)}}
+.music-title{font-family:"Cormorant Garamond",serif;font-size:32px}
+.music-progress{
+ width:100%;height:7px;border-radius:20px;background:#ffffff44;margin:25px 0 10px;cursor:pointer;overflow:hidden
 }
-
+.music-progress-bar{height:100%;width:0;background:#fff;border-radius:20px}
+.music-time{display:flex;justify-content:space-between;font-size:12px;opacity:.8}
 .song-buttons button{
-    border:0;
-    padding:13px 25px;
-    border-radius:50px;
-    margin:15px 5px 0;
-    cursor:pointer;
-    font-weight:bold;
+ border:0;padding:12px 22px;border-radius:50px;margin:15px 4px 0;cursor:pointer;font-weight:700
 }
 
-/* =========================
-   REASONS
-========================= */
-
-.reasons{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+/* letter */
+.letter-wrap{max-width:850px;margin:auto;perspective:1200px}
+.envelope{
+ background:linear-gradient(145deg,#f8b5c9,#e887a8);padding:30px;border-radius:25px;
+ cursor:pointer;box-shadow:0 18px 45px #8e1c4e25
 }
-
-.reason{
-    background:white;
-    padding:28px 20px;
-    border-radius:22px;
-    box-shadow:0 8px 25px rgba(100,0,40,.1);
-    transition:.3s;
-}
-
-.reason:hover{
-    transform:scale(1.04);
-}
-
-.reason-icon{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.reason h3{
-    color:#c21d58;
-    margin-bottom:8px;
-}
-
-/* =========================
-   FUNNY
-========================= */
-
-.funny{
-    max-width:800px;
-    margin:auto;
-    background:#fff;
-    padding:40px 28px;
-    border-radius:30px;
-    box-shadow:0 10px 35px rgba(120,20,60,.13);
-}
-
-.funny h3{
-    color:#c21d58;
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.funny p{
-    font-size:20px;
-    line-height:2;
-}
-
-/* =========================
-   LETTER
-========================= */
-
+.envelope-top{font-size:65px}
+.envelope small{color:#64143c}
 .letter{
-    max-width:820px;
-    margin:auto;
-    background:white;
-    padding:45px;
-    border-radius:28px;
-    text-align:left;
-    line-height:2;
-    font-size:18px;
-    box-shadow:0 12px 40px rgba(120,20,60,.13);
+ display:none;text-align:left;background:#fffdf8;padding:45px;border-radius:6px;
+ box-shadow:0 15px 50px #64143c22;line-height:2;font-size:17px;
+ background-image:linear-gradient(#ffffff 97%,#f1d9e2 98%)
 }
+.letter.open{display:block;animation:letterOpen .9s ease}
+@keyframes letterOpen{from{opacity:0;transform:rotateX(-80deg) translateY(-20px)}to{opacity:1;transform:rotateX(0) translateY(0)}}
+.signature{text-align:right;color:var(--rose);font-weight:700;margin-top:25px}
 
-.signature{
-    text-align:right;
-    margin-top:30px;
-    color:#c21d58;
-    font-weight:bold;
-}
-
-/* =========================
-   SURPRISE
-========================= */
-
-.surprise{
-    min-height:600px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
-
-.gift{
-    font-size:110px;
-    cursor:pointer;
-    animation:bounce 1.5s infinite;
-}
-
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
-}
-
+/* surprise */
+.surprise{min-height:650px;background:radial-gradient(circle at center,#fff1f6,#fff)}
+.gift{font-size:110px;cursor:pointer;animation:bounce 1.4s infinite;filter:drop-shadow(0 10px 20px #c21d5844)}
+@keyframes bounce{50%{transform:translateY(-15px) rotate(-4deg)}}
 .surprise-message{
-    display:none;
-    max-width:750px;
-    margin:30px auto 0;
-    padding:45px 25px;
-    border-radius:30px;
-    color:white;
-    background:linear-gradient(135deg,#ff4d86,#b91652);
-    animation:fadeUp 1s ease;
+ display:none;max-width:750px;margin:30px auto 0;padding:40px 25px;border-radius:30px;color:#fff;
+ background:linear-gradient(135deg,#ff4d86,#b91652);animation:fadeUp 1s ease;box-shadow:0 20px 55px #b9165244
 }
+.surprise-message.show{display:block}
+.surprise-message h2{font-family:"Cormorant Garamond",serif;font-size:42px;margin-bottom:18px}
+.surprise-message p{font-size:19px;line-height:1.9}
 
-.surprise-message h2{
-    font-size:40px;
-    margin-bottom:20px;
-}
-
-.surprise-message p{
-    font-size:20px;
-    line-height:1.9;
-}
-
-/* =========================
-   FINAL
-========================= */
-
+/* final */
 .final{
-    min-height:75vh;
-    color:white;
-
-    background:
-    linear-gradient(rgba(55,0,30,.72),rgba(30,0,20,.85)),
-    url("photo3.jpg") center/cover;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+ min-height:85vh;color:#fff;background:
+ linear-gradient(#3b001ac9,#1e0014e8),url("photo3.jpg") center/cover fixed;
+ display:flex;justify-content:center;align-items:center;flex-direction:column;padding:80px 20px
 }
+.final h1{font-family:"Cormorant Garamond",serif;font-size:clamp(45px,7vw,75px);margin-bottom:18px}
+.final p{max-width:760px;font-size:20px;line-height:1.9}
+.final-date{margin:25px;padding:13px 30px;border:1px solid #fff;border-radius:50px}
 
-.final h1{
-    font-size:55px;
-    margin-bottom:20px;
+/* footer */
+footer{background:#3d0d24;color:#fff;padding:30px;text-align:center}
+footer p{margin:7px}
+
+/* special day */
+body.special-day .hero{
+ background:linear-gradient(135deg,#3b001ab8,#b91652cc),url("photo1.jpg") center/cover fixed
 }
-
-.final p{
-    max-width:750px;
-    font-size:21px;
-    line-height:1.9;
+body.special-day .hero h1{animation:anniversaryGlow 1.8s infinite alternate}
+@keyframes anniversaryGlow{
+ from{text-shadow:0 0 15px #fff,0 8px 30px #0008}
+ to{text-shadow:0 0 35px #ff9fbd,0 8px 30px #0008}
 }
-
-.final-date{
-    margin:25px;
-    padding:13px 30px;
-    border:1px solid white;
-    border-radius:50px;
+.special-banner{
+ display:none;position:fixed;top:58px;left:50%;transform:translateX(-50%);z-index:95;
+ background:#fff;color:var(--rose);padding:10px 22px;border-radius:50px;font-weight:800;
+ box-shadow:0 10px 30px #5c103222
 }
+body.special-day .special-banner{display:block}
 
-/* =========================
-   FOOTER
-========================= */
+/* animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
 
-footer{
-    background:#3d0d24;
-    color:white;
-    padding:30px;
-    text-align:center;
+/* mobile */
+@media(max-width:800px){
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .timeline:before{left:10px}
+ .timeline-item,.timeline-item:nth-child(even){width:100%;margin-left:0;padding-left:40px}
+ .timeline-item:nth-child(odd) .timeline-dot,.timeline-item:nth-child(even) .timeline-dot{left:1px;right:auto}
 }
-
-footer p{
-    margin:7px;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:600px){
-
-    nav{
-        padding:9px 3px;
-    }
-
-    nav a{
-        font-size:10px;
-        margin:0 3px;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .hero h2{
-        font-size:22px;
-    }
-
-    .hero-names{
-        font-size:27px;
-    }
-
-    .hero p{
-        font-size:17px;
-    }
-
-    .section-title{
-        font-size:30px;
-    }
-
-    .letter{
-        padding:25px;
-    }
-
-    .final h1{
-        font-size:38px;
-    }
+ nav{padding:9px 3px;white-space:nowrap;overflow-x:auto}
+ nav a{font-size:10px;margin:0 4px}
+ .hero{background-attachment:scroll}
+ .countdown{grid-template-columns:repeat(2,1fr)}
+ .gallery{grid-template-columns:1fr}
+ .photo-card img{height:320px}
+ section{padding:70px 16px}
+ .letter{padding:25px}
+ .special-banner{top:48px;font-size:11px;white-space:nowrap}
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING HEARTS -->
+<div class="special-banner">🎉 HAPPY 1ST ANNIVERSARY, NOBLE & PRADIP ❤️</div>
 
 <div class="hearts">
-
-<span class="heart" style="left:5%;animation-delay:0s;">❤️</span>
-<span class="heart" style="left:15%;animation-delay:2s;">💕</span>
-<span class="heart" style="left:27%;animation-delay:4s;">💗</span>
-<span class="heart" style="left:39%;animation-delay:1s;">❤️</span>
-<span class="heart" style="left:52%;animation-delay:3s;">💖</span>
-<span class="heart" style="left:67%;animation-delay:5s;">💕</span>
-<span class="heart" style="left:80%;animation-delay:2s;">❤️</span>
-<span class="heart" style="left:94%;animation-delay:4s;">💗</span>
-
+ <span class="heart" style="left:5%;animation-delay:0s">❤️</span>
+ <span class="heart" style="left:15%;animation-delay:2s">💕</span>
+ <span class="heart" style="left:27%;animation-delay:4s">💗</span>
+ <span class="heart" style="left:39%;animation-delay:1s">❤️</span>
+ <span class="heart" style="left:52%;animation-delay:3s">💖</span>
+ <span class="heart" style="left:67%;animation-delay:5s">💕</span>
+ <span class="heart" style="left:80%;animation-delay:2s">❤️</span>
+ <span class="heart" style="left:94%;animation-delay:4s">💗</span>
 </div>
-
-
-<!-- NAVIGATION -->
 
 <nav>
-
-<a href="#home">Home</a>
-<a href="#story">Story</a>
-<a href="#memories">Photos</a>
-<a href="#favorites">Favorites</a>
-<a href="#shayari">Shayari</a>
-<a href="#song">Song</a>
-<a href="#letter">Letter</a>
-<a href="#surprise">Surprise</a>
-
+ <a href="#home">Home</a>
+ <a href="#countdown">Countdown</a>
+ <a href="#story">Story</a>
+ <a href="#journey">Journey</a>
+ <a href="#memories">Photos</a>
+ <a href="#favorites">Favorites</a>
+ <a href="#shayari">Shayari</a>
+ <a href="#song">Song</a>
+ <a href="#letter">Letter</a>
+ <a href="#surprise">Surprise</a>
 </nav>
 
-
-<!-- HERO -->
-
 <section class="hero" id="home">
-
-<div class="hero-content">
-
-<div class="hero-small">
-FOR MY BEAUTIFUL WIFE
-</div>
-
-<h1>Happy 1st Anniversary</h1>
-
-<div class="hero-names">
-नोबल ❤️ प्रदिप
-</div>
-
-<h2>आपल्या प्रेमाच्या सुंदर प्रवासासाठी...</h2>
-
-<div class="hero-date">
-💍 १२ • १० • २०२६ 💍
-</div>
-
-<p>
-१२ ऑक्टोबर २०२५ रोजी सुरू झालेली आपली सुंदर कहाणी...
-<br>
-आज एका वर्षानंतर अजून सुंदर झाली आहे. ❤️
-</p>
-
-<a href="#story" class="btn">
-❤️ आपली Love Story पाहा
-</a>
-
-</div>
-
+ <div class="hero-content">
+  <div class="hero-small">FOR MY BEAUTIFUL WIFE</div>
+  <h1>Happy 1st Anniversary</h1>
+  <div class="hero-names">नोबल ❤️ प्रदिप</div>
+  <h2>आपल्या प्रेमाच्या सुंदर प्रवासासाठी...</h2>
+  <div class="hero-date">💍 १२ • १० • २०२६ 💍</div>
+  <p>१२ ऑक्टोबर २०२५ रोजी सुरू झालेली आपली सुंदर कहाणी...<br>आज एका वर्षानंतर अजून सुंदर झाली आहे. ❤️</p>
+  <a href="#countdown" class="btn">❤️ आपल्या खास दिवसाकडे</a>
+ </div>
+ <div class="scroll">↓ SCROLL TO OUR STORY ↓</div>
 </section>
 
-
-<!-- STORY -->
+<section id="countdown" class="countdown-section">
+ <h2 class="section-title">⏳ Our Special Day</h2>
+ <p class="section-subtitle">आपल्या पहिल्या Anniversary साठी अजून...</p>
+ <div class="countdown" id="countdownBox">
+  <div class="time-box"><span id="days">00</span><small>Days</small></div>
+  <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+  <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+  <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
+ </div>
+ <div class="anniversary-live" id="anniversaryLive">🎉 आज आपला खास दिवस आहे! Happy 1st Anniversary, नोबल ❤️ प्रदिप 🎉</div>
+</section>
 
 <section id="story">
-
-<h2 class="section-title">💑 आपली Love Story</h2>
-
-<p class="section-subtitle">
-एक वर्ष... हजारो आठवणी... आणि आयुष्यभराचं प्रेम ❤️
-</p>
-
-<div class="story">
-
-<div class="story-card">
-
-<h3>💍 १२ ऑक्टोबर २०२५</h3>
-
-<p>
-हा तो खास दिवस होता ज्या दिवशी आपल्या दोघांच्या
-आयुष्याने एक नवीन वळण घेतलं.
-दोन वेगवेगळ्या आयुष्यांचा एक सुंदर प्रवास सुरू झाला.
-</p>
-
-</div>
-
-
-<div class="story-card">
-
-<h3>❤️ आपलं पहिलं वर्ष</h3>
-
-<p>
-या एका वर्षात हसू होतं, रुसवा होता,
-छोट्या छोट्या भांडणातही प्रेम होतं,
-आणि सर्वात महत्त्वाचं म्हणजे —
-आपण एकमेकांसोबत होतो.
-</p>
-
-</div>
-
-
-<div class="story-card">
-
-<h3>🌹 पुढचा प्रवास</h3>
-
-<p>
-पहिलं वर्ष फक्त सुरुवात आहे.
-पुढे अजून खूप वर्षं,
-खूप आठवणी आणि खूप प्रेम बाकी आहे.
-</p>
-
-</div>
-
-</div>
-
+ <h2 class="section-title">💑 आपली Love Story</h2>
+ <p class="section-subtitle">एक वर्ष... हजारो आठवणी... आणि आयुष्यभराचं प्रेम ❤️</p>
+ <div class="story">
+  <div class="story-card"><h3>💍 १२ ऑक्टोबर २०२५</h3><p>हा तो खास दिवस होता ज्या दिवशी आपल्या दोघांच्या आयुष्याने एक नवीन वळण घेतलं. दोन वेगवेगळ्या आयुष्यांचा एक सुंदर प्रवास सुरू झाला.</p></div>
+  <div class="story-card"><h3>❤️ आपलं पहिलं वर्ष</h3><p>या एका वर्षात हसू होतं, रुसवा होता, छोट्या छोट्या भांडणातही प्रेम होतं, आणि सर्वात महत्त्वाचं म्हणजे — आपण एकमेकांसोबत होतो.</p></div>
+  <div class="story-card"><h3>🌹 पुढचा प्रवास</h3><p>पहिलं वर्ष फक्त सुरुवात आहे. पुढे अजून खूप वर्षं, खूप आठवणी आणि खूप प्रेम बाकी आहे.</p></div>
+ </div>
 </section>
 
-
-<!-- FAVORITES -->
+<section id="journey" class="soft-section">
+ <h2 class="section-title">🕰️ Our Beautiful Journey</h2>
+ <p class="section-subtitle">आपल्या आयुष्यातील काही खास क्षण ❤️</p>
+ <div class="timeline">
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><h3>💍 12 October 2025</h3><p>आपल्या वैवाहिक आयुष्याची सुंदर सुरुवात.</p></div></div>
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><h3>❤️ First Year</h3><p>हसू, प्रेम, रुसवा आणि असंख्य छोट्या आठवणी.</p></div></div>
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><h3>🥰 Special Memories</h3><p>एकत्र घालवलेला प्रत्येक क्षण आपल्या story चा भाग झाला.</p></div></div>
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><h3>🇯🇵 A Dream Ahead</h3><p>एक दिवस तुझ्यासोबत Japan फिरायचं आहे.</p></div></div>
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card"><h3>🎉 12 October 2026</h3><p>आपली पहिली Anniversary — आणि पुढच्या हजारो आठवणींची सुरुवात.</p></div></div>
+ </div>
+</section>
 
 <section id="favorites">
-
-<h2 class="section-title">🌸 नोबलच्या आवडी</h2>
-
-<p class="section-subtitle">
-जिच्यावर प्रेम करतो तिच्या छोट्या छोट्या आवडीही खास असतात ❤️
-</p>
-
-<div class="favorites">
-
-<div class="favorite">
-
-<div class="favorite-icon">🌸</div>
-
-<h3>Favorite Color</h3>
-
-<p>Baby Pink 💗</p>
-
-</div>
-
-
-<div class="favorite">
-
-<div class="favorite-icon">🍛</div>
-
-<h3>Favorite Food</h3>
-
-<p>
-South Indian Dish<br>
-Dosa • Idli ❤️
-</p>
-
-</div>
-
-
-<div class="favorite">
-
-<div class="favorite-icon">🇯🇵</div>
-
-<h3>Favorite Place</h3>
-
-<p>Japan 🗻❤️</p>
-
-</div>
-
-
-<div class="favorite">
-
-<div class="favorite-icon">❤️</div>
-
-<h3>My Favorite Person</h3>
-
-<p>नोबल — Always & Forever ❤️</p>
-
-</div>
-
-</div>
-
+ <h2 class="section-title">🌸 नोबलच्या आवडी</h2>
+ <p class="section-subtitle">जिच्यावर प्रेम करतो तिच्या छोट्या छोट्या आवडीही खास असतात ❤️</p>
+ <div class="favorites">
+  <div class="favorite"><div class="favorite-icon">🌸</div><h3>Favorite Color</h3><p>Baby Pink 💗</p></div>
+  <div class="favorite"><div class="favorite-icon">🍛</div><h3>Favorite Food</h3><p>South Indian Dish<br>Dosa • Idli ❤️</p></div>
+  <div class="favorite"><div class="favorite-icon">🇯🇵</div><h3>Favorite Place</h3><p>Japan 🗻❤️</p></div>
+  <div class="favorite"><div class="favorite-icon">❤️</div><h3>My Favorite Person</h3><p>नोबल — Always & Forever ❤️</p></div>
+ </div>
 </section>
 
-
-<!-- MEMORIES -->
-
-<section id="memories">
-
-<h2 class="section-title">📸 Our Beautiful Memories</h2>
-
-<p class="section-subtitle">
-तुमचे खास फोटो इथे नंतर add करता येतील ❤️
-</p>
-
-<div class="gallery">
-
-
-<div class="photo-card">
-
-<img src="photo1.jpg" alt="Photo 1">
-
-<h3>❤️ Our Beginning</h3>
-
-<p>
-“काही फोटो फक्त फोटो नसतात...
-ते आपल्या आयुष्याची सुंदर सुरुवात असतात.”
-</p>
-
-</div>
-
-
-<div class="photo-card">
-
-<img src="photo2.jpg" alt="Photo 2">
-
-<h3>💕 My Beautiful Wife</h3>
-
-<p>
-“जगात कितीही सुंदर चेहरे असले,
-माझ्या नजरेला तूच आवडतेस.”
-</p>
-
-</div>
-
-
-<div class="photo-card">
-
-<img src="photo3.jpg" alt="Photo 3">
-
-<h3>🥰 Together</h3>
-
-<p>
-“तू सोबत असलीस की
-साधा क्षणही खास होतो.”
-</p>
-
-</div>
-
-
-<div class="photo-card">
-
-<img src="photo4.jpg" alt="Photo 4">
-
-<h3>😂 Our Funny Moment</h3>
-
-<p>
-“प्रेमात थोडं रुसणं,
-थोडं हसणं आणि भरपूर वेडेपणा!”
-</p>
-
-</div>
-
-
-<div class="photo-card">
-
-<img src="photo5.jpg" alt="Photo 5">
-
-<h3>🌹 Beautiful You</h3>
-
-<p>
-“तुझ्या एका smile साठी
-मी पुन्हा पुन्हा प्रेमात पडतो.”
-</p>
-
-</div>
-
-
-<div class="photo-card">
-
-<img src="photo6.jpg" alt="Photo 6">
-
-<h3>💖 Forever</h3>
-
-<p>
-“आजची आठवण उद्याची सुंदर कहाणी बनेल.”
-</p>
-
-</div>
-
-</div>
-
+<section id="memories" class="soft-section">
+ <h2 class="section-title">📸 Our Beautiful Memories</h2>
+ <p class="section-subtitle">फोटोवर click करा आणि full-screen memory पहा ❤️</p>
+ <div class="gallery">
+  <div class="photo-card" onclick="openPhoto('photo1.jpg')"><img src="photo1.jpg" alt="Our Beginning"><h3>❤️ Our Beginning</h3><p>काही फोटो फक्त फोटो नसतात... ते आपल्या आयुष्याची सुंदर सुरुवात असतात.</p></div>
+  <div class="photo-card" onclick="openPhoto('photo2.jpg')"><img src="photo2.jpg" alt="My Beautiful Wife"><h3>💕 My Beautiful Wife</h3><p>जगात कितीही सुंदर चेहरे असले, माझ्या नजरेला तूच आवडतेस.</p></div>
+  <div class="photo-card" onclick="openPhoto('photo3.jpg')"><img src="photo3.jpg" alt="Together"><h3>🥰 Together</h3><p>तू सोबत असलीस की साधा क्षणही खास होतो.</p></div>
+  <div class="photo-card" onclick="openPhoto('photo4.jpg')"><img src="photo4.jpg" alt="Funny Moment"><h3>😂 Our Funny Moment</h3><p>प्रेमात थोडं रुसणं, थोडं हसणं आणि भरपूर वेडेपणा!</p></div>
+  <div class="photo-card" onclick="openPhoto('photo5.jpg')"><img src="photo5.jpg" alt="Beautiful You"><h3>🌹 Beautiful You</h3><p>तुझ्या एका smile साठी मी पुन्हा पुन्हा प्रेमात पडतो.</p></div>
+  <div class="photo-card" onclick="openPhoto('photo6.jpg')"><img src="photo6.jpg" alt="Forever"><h3>💖 Forever</h3><p>आजची आठवण उद्याची सुंदर कहाणी बनेल.</p></div>
+ </div>
+ <p class="gallery-note">टीप: photo1.jpg ते photo6.jpg या नावांनी तुमचे फोटो याच folder मध्ये ठेवा.</p>
 </section>
 
-
-<!-- SHAYARI -->
+<div class="lightbox" id="lightbox" onclick="closePhoto(event)">
+ <span class="close-lightbox">×</span>
+ <img id="lightboxImg" src="" alt="Memory">
+</div>
 
 <section id="shayari">
-
-<h2 class="section-title">🌹 नोबलसाठी खास शायरी</h2>
-
-<p class="section-subtitle">
-थोडं प्रेम ❤️ थोडी comedy 😂
-</p>
-
-<div class="shayari-box">
-
-<div class="shayari">
-
-<p>
-“तुझ्यावर प्रेम एवढं करतो,<br>
-की तुझ्या रागालाही सहन करतो... 😜<br><br>
-
-पण एक गुपित सांगू का?<br>
-
-रागावल्यावर तू अजूनच सुंदर दिसतेस,<br>
-
-म्हणूनच कधी कधी मुद्दाम चिडवतो! ❤️😂”
-</p>
-
-</div>
-
-
-<div class="shayari">
-
-<p>
-“तू माझ्यासोबत असतेस,<br>
-म्हणून आयुष्य सुंदर आहे... ❤️<br><br>
-
-आणि तू नसलीस की<br>
-माझा फोनही मला विचारतो —<br>
-
-‘प्रदिप, नोबल कुठे आहे?’ 😂❤️”
-</p>
-
-</div>
-
-
-<div class="shayari">
-
-<p>
-“डोसा तुला आवडतो,<br>
-इडली तुला आवडते... 😋<br><br>
-
-पण मला काय आवडतं विचारशील तर,<br>
-
-डोसा-इडलीपेक्षा जास्त<br>
-माझी नोबल मला आवडते! ❤️😂”
-</p>
-
-</div>
-
-</div>
-
+ <h2 class="section-title">🌹 नोबलसाठी खास शायरी</h2>
+ <p class="section-subtitle">थोडं प्रेम ❤️ थोडी comedy 😂</p>
+ <div class="shayari-box">
+  <div class="shayari"><p>“तुझ्यावर प्रेम एवढं करतो,<br>की तुझ्या रागालाही सहन करतो... 😜<br><br>पण एक गुपित सांगू का?<br>रागावल्यावर तू अजूनच सुंदर दिसतेस,<br>म्हणूनच कधी कधी मुद्दाम चिडवतो! ❤️😂”</p></div>
+  <div class="shayari"><p>“तू माझ्यासोबत असतेस,<br>म्हणून आयुष्य सुंदर आहे... ❤️<br><br>आणि तू नसलीस की<br>माझा फोनही मला विचारतो —<br>‘प्रदिप, नोबल कुठे आहे?’ 😂❤️”</p></div>
+  <div class="shayari"><p>“डोसा तुला आवडतो,<br>इडली तुला आवडते... 😋<br><br>पण मला काय आवडतं विचारशील तर,<br>डोसा-इडलीपेक्षा जास्त<br>माझी नोबल मला आवडते! ❤️😂”</p></div>
+ </div>
 </section>
-
-
-<!-- SONG -->
 
 <section id="song" class="song-section">
-
-<h2 class="section-title">🎵 आपल्या प्रेमाचं गाणं</h2>
-
-<p class="section-subtitle">
-हे गाणं ऐकताना फक्त नोबलची आठवण यावी... ❤️
-</p>
-
-<div class="song-box">
-
-<div class="song-photo" id="songPhoto"></div>
-
-<h2>❤️ Our Love Song ❤️</h2>
-
-<p style="margin-top:15px;">
-“या गाण्याचा प्रत्येक सूर
-आपल्या प्रेमाची एक आठवण आहे.”
-</p>
-
-<audio id="loveSong" src="our-song.mp3"></audio>
-
-<div class="song-buttons">
-
-<button onclick="playSong()">▶ Play</button>
-
-<button onclick="pauseSong()">⏸ Pause</button>
-
-</div>
-
-</div>
-
+ <h2 class="section-title">🎵 आपल्या प्रेमाचं गाणं</h2>
+ <p class="section-subtitle">हे गाणं ऐकताना फक्त नोबलची आठवण यावी... ❤️</p>
+ <div class="song-box">
+  <div class="song-photo" id="songPhoto"></div>
+  <div class="music-title">❤️ Our Love Song ❤️</div>
+  <p style="margin-top:10px">“या गाण्याचा प्रत्येक सूर आपल्या प्रेमाची एक आठवण आहे.”</p>
+  <audio id="loveSong" src="our-song.mp3"></audio>
+  <div class="music-progress" onclick="seekSong(event)"><div class="music-progress-bar" id="progressBar"></div></div>
+  <div class="music-time"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+  <div class="song-buttons">
+   <button onclick="playSong()">▶ Play</button>
+   <button onclick="pauseSong()">⏸ Pause</button>
+   <button onclick="restartSong()">↺ Restart</button>
+  </div>
+ </div>
 </section>
-
-
-<!-- REASONS -->
 
 <section>
-
-<h2 class="section-title">❤️ मी नोबलवर प्रेम का करतो?</h2>
-
-<p class="section-subtitle">
-कारणं दहा आहेत... पण प्रेम करण्याचं कारण एकच — ती नोबल आहे. ❤️
-</p>
-
-<div class="reasons">
-
-<div class="reason">
-<div class="reason-icon">❤️</div>
-<h3>माझं आयुष्य सुंदर केलंस</h3>
-<p>तू आलीस आणि आयुष्याला एक नवीन अर्थ मिळाला.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">😊</div>
-<h3>तुझ्या Smile साठी</h3>
-<p>तुझं हसू माझ्या दिवसाचा सर्वात सुंदर भाग आहे.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">🥰</div>
-<h3>तुझ्या काळजीसाठी</h3>
-<p>तू माझी जी काळजी घेतेस ती माझ्यासाठी खूप खास आहे.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">😂</div>
-<h3>तुझ्या वेडेपणासाठी</h3>
-<p>तुझ्यासोबत वेडेपणा करण्यातही खूप मजा आहे.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">🌸</div>
-<h3>तुझ्या साधेपणासाठी</h3>
-<p>तुझं साधेपण माझ्या मनाला खूप आवडतं.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">🤝</div>
-<h3>तुझ्या साथीकरिता</h3>
-<p>सुख-दुःखात तू माझ्या सोबत आहेस.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">💕</div>
-<h3>तू माझी Best Friend आहेस</h3>
-<p>तुझ्यासोबत मी मनापासून स्वतःसारखा राहू शकतो.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">🇯🇵</div>
-<h3>आपल्या Dreams साठी</h3>
-<p>एक दिवस तुझ्यासोबत Japan फिरायचं आहे.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">🌹</div>
-<h3>तुझ्यासाठी</h3>
-<p>तू माझ्या आयुष्यात आहेस, हेच माझ्यासाठी पुरेसं आहे.</p>
-</div>
-
-
-<div class="reason">
-<div class="reason-icon">💍</div>
-<h3>Forever</h3>
-<p>मला माझं पूर्ण आयुष्य तुझ्यासोबत जगायचं आहे.</p>
-</div>
-
-</div>
-
+ <h2 class="section-title">❤️ मी नोबलवर प्रेम का करतो?</h2>
+ <p class="section-subtitle">कारणं दहा आहेत... पण प्रेम करण्याचं कारण एकच — ती नोबल आहे. ❤️</p>
+ <div class="reasons">
+  <div class="reason"><div class="reason-icon">❤️</div><h3>माझं आयुष्य सुंदर केलंस</h3><p>तू आलीस आणि आयुष्याला एक नवीन अर्थ मिळाला.</p></div>
+  <div class="reason"><div class="reason-icon">😊</div><h3>तुझ्या Smile साठी</h3><p>तुझं हसू माझ्या दिवसाचा सर्वात सुंदर भाग आहे.</p></div>
+  <div class="reason"><div class="reason-icon">🥰</div><h3>तुझ्या काळजीसाठी</h3><p>तू माझी जी काळजी घेतेस ती माझ्यासाठी खूप खास आहे.</p></div>
+  <div class="reason"><div class="reason-icon">😂</div><h3>तुझ्या वेडेपणासाठी</h3><p>तुझ्यासोबत वेडेपणा करण्यातही खूप मजा आहे.</p></div>
+  <div class="reason"><div class="reason-icon">🌸</div><h3>तुझ्या साधेपणासाठी</h3><p>तुझं साधेपण माझ्या मनाला खूप आवडतं.</p></div>
+  <div class="reason"><div class="reason-icon">🤝</div><h3>तुझ्या साथीकरिता</h3><p>सुख-दुःखात तू माझ्या सोबत आहेस.</p></div>
+  <div class="reason"><div class="reason-icon">💕</div><h3>तू माझी Best Friend आहेस</h3><p>तुझ्यासोबत मी मनापासून स्वतःसारखा राहू शकतो.</p></div>
+  <div class="reason"><div class="reason-icon">🇯🇵</div><h3>आपल्या Dreams साठी</h3><p>एक दिवस तुझ्यासोबत Japan फिरायचं आहे.</p></div>
+  <div class="reason"><div class="reason-icon">🌹</div><h3>तुझ्यासाठी</h3><p>तू माझ्या आयुष्यात आहेस, हेच माझ्यासाठी पुरेसं आहे.</p></div>
+  <div class="reason"><div class="reason-icon">💍</div><h3>Forever</h3><p>मला माझं पूर्ण आयुष्य तुझ्यासोबत जगायचं आहे.</p></div>
+ </div>
 </section>
 
-
-<!-- FUNNY -->
-
-<section>
-
-<h2 class="section-title">😂 प्रदिपची एक मोठी जाणीव</h2>
-
-<div class="funny">
-
-<h3>लग्नाआधी vs लग्नानंतर 😜</h3>
-
-<p>
-लग्नाआधी मला वाटायचं...<br>
-<strong>“माझं घर, माझे नियम!”</strong> 😎
-<br><br>
-
-लग्नानंतर कळलं... 😂<br>
-
-<strong>
-“घर आपलं आहे... पण नियम नोबलचे आहेत!” ❤️
-</strong>
-<br><br>
-
-आणि खरं सांगायचं तर...
-मला तेच आवडतं! 😍
-</p>
-
-</div>
-
+<section class="soft-section">
+ <h2 class="section-title">😂 प्रदिपची एक मोठी जाणीव</h2>
+ <div class="funny container">
+  <h3>लग्नाआधी vs लग्नानंतर 😜</h3>
+  <p>लग्नाआधी मला वाटायचं...<br><strong>“माझं घर, माझे नियम!”</strong> 😎<br><br>लग्नानंतर कळलं... 😂<br><strong>“घर आपलं आहे... पण नियम नोबलचे आहेत!” ❤️</strong><br><br>आणि खरं सांगायचं तर... मला तेच आवडतं! 😍</p>
+ </div>
 </section>
-
-
-<!-- LETTER -->
 
 <section id="letter">
-
-<h2 class="section-title">💌 माझ्या नोबलसाठी...</h2>
-
-<div class="letter">
-
-<p>प्रिय नोबल,</p>
-
-<br>
-
-<p>
-१२ ऑक्टोबर २०२५ रोजी आपल्या आयुष्याचा एक सुंदर
-प्रवास सुरू झाला. आज त्या दिवसाला एक वर्ष पूर्ण होत आहे.
-</p>
-
-<br>
-
-<p>
-या एका वर्षात आपण खूप हसलो,
-कधी रुसलो, कधी छोट्या छोट्या गोष्टींवर भांडलो,
-पण प्रत्येक क्षणी एक गोष्ट कायम राहिली —
-आपलं प्रेम. ❤️
-</p>
-
-<br>
-
-<p>
-तू माझ्या आयुष्यात आलीस आणि मला समजलं की
-आपल्या आयुष्यात एखादी व्यक्ती असणं आणि
-आपली व्यक्ती असणं यात किती मोठा फरक असतो.
-</p>
-
-<br>
-
-<p>
-तुझं हसणं, तुझी काळजी, तुझा साधेपणा,
-तुझ्या छोट्या छोट्या सवयी आणि अगदी तुझा रागसुद्धा
-मला मनापासून आवडतो.
-</p>
-
-<br>
-
-<p>
-तुझ्यासोबत मला South Indian food खायचं आहे,
-तुझ्यासोबत Japan फिरायचं आहे,
-तुझ्यासोबत अजून हजारो फोटो काढायचे आहेत,
-आणि तुझ्यासोबत आयुष्यभर हसायचं आहे. ❤️
-</p>
-
-<br>
-
-<p>
-आज आपल्या पहिल्या Anniversary ला
-मी फक्त एक promise करतो —
-परिस्थिती कशीही असो,
-तुझा हात माझ्या हातात असावा,
-आणि माझं मन कायम तुझ्याजवळ असावं.
-</p>
-
-<br>
-
-<p>
-नोबल, मला पुन्हा आयुष्य निवडण्याची संधी मिळाली
-तरी मी तुलाच निवडेन. ❤️
-</p>
-
-<div class="signature">
-
-कायम तुझाच,<br>
-<strong>प्रदिप ❤️</strong>
-
-</div>
-
-</div>
-
+ <h2 class="section-title">💌 माझ्या नोबलसाठी...</h2>
+ <p class="section-subtitle">खालील envelope वर click करा ❤️</p>
+ <div class="letter-wrap">
+  <div class="envelope" id="envelope" onclick="openLetter()">
+   <div class="envelope-top">💌</div>
+   <strong>For My Beautiful Wife, Noble</strong><br>
+   <small>Click to open my heart...</small>
+  </div>
+  <div class="letter" id="letterContent">
+   <p>प्रिय नोबल,</p><br>
+   <p>१२ ऑक्टोबर २०२५ रोजी आपल्या आयुष्याचा एक सुंदर प्रवास सुरू झाला. आज त्या दिवसाला एक वर्ष पूर्ण होत आहे.</p><br>
+   <p>या एका वर्षात आपण खूप हसलो, कधी रुसलो, कधी छोट्या छोट्या गोष्टींवर भांडलो, पण प्रत्येक क्षणी एक गोष्ट कायम राहिली — आपलं प्रेम. ❤️</p><br>
+   <p>तू माझ्या आयुष्यात आलीस आणि मला समजलं की आपल्या आयुष्यात एखादी व्यक्ती असणं आणि आपली व्यक्ती असणं यात किती मोठा फरक असतो.</p><br>
+   <p>तुझं हसणं, तुझी काळजी, तुझा साधेपणा, तुझ्या छोट्या छोट्या सवयी आणि अगदी तुझा रागसुद्धा मला मनापासून आवडतो.</p><br>
+   <p>तुझ्यासोबत मला South Indian food खायचं आहे, तुझ्यासोबत Japan फिरायचं आहे, तुझ्यासोबत अजून हजारो फोटो काढायचे आहेत, आणि तुझ्यासोबत आयुष्यभर हसायचं आहे. ❤️</p><br>
+   <p>आज आपल्या पहिल्या Anniversary ला मी फक्त एक promise करतो — परिस्थिती कशीही असो, तुझा हात माझ्या हातात असावा, आणि माझं मन कायम तुझ्याजवळ असावं.</p><br>
+   <p>नोबल, मला पुन्हा आयुष्य निवडण्याची संधी मिळाली तरी मी तुलाच निवडेन. ❤️</p>
+   <div class="signature">कायम तुझाच,<br><strong>प्रदिप ❤️</strong></div>
+  </div>
+ </div>
 </section>
-
-
-<!-- SURPRISE -->
 
 <section id="surprise" class="surprise">
-
-<h2 class="section-title">
-🎁 नोबलसाठी शेवटचं Surprise
-</h2>
-
-<p style="margin:20px;">
-Gift box वर click कर ❤️
-</p>
-
-<div class="gift" onclick="openGift()">
-🎁
-</div>
-
-<div class="surprise-message" id="surpriseMessage">
-
-<h2>❤️ I LOVE YOU, NOBLE ❤️</h2>
-
-<p>
-पहिलं वर्ष संपलंय...
-पण तुझ्यावरचं माझं प्रेम अजूनही
-पहिल्या दिवसासारखंच आहे.
-<br><br>
-
-ही आपल्या आयुष्यभराच्या
-प्रेमकथेची फक्त सुरुवात आहे. 💍
-<br><br>
-
-आजपेक्षा उद्या जास्त,
-आणि उद्यापेक्षा प्रत्येक दिवशी
-तुला जास्त प्रेम करेन.
-<br><br>
-
-<strong>
-Happy 1st Anniversary, My Love ❤️
-</strong>
-</p>
-
-</div>
-
+ <h2 class="section-title">🎁 नोबलसाठी शेवटचं Surprise</h2>
+ <p style="margin:18px">Gift box वर click कर ❤️</p>
+ <div class="gift" onclick="openGift()">🎁</div>
+ <div class="surprise-message" id="surpriseMessage">
+  <h2>❤️ I LOVE YOU, NOBLE ❤️</h2>
+  <p>पहिलं वर्ष संपलंय... पण तुझ्यावरचं माझं प्रेम अजूनही पहिल्या दिवसासारखंच आहे.<br><br>
+  ही आपल्या आयुष्यभराच्या प्रेमकथेची फक्त सुरुवात आहे. 💍<br><br>
+  आजपेक्षा उद्या जास्त, आणि उद्यापेक्षा प्रत्येक दिवशी तुला जास्त प्रेम करेन.<br><br>
+  <strong>Happy 1st Anniversary, My Love ❤️</strong></p>
+ </div>
 </section>
-
-
-<!-- FINAL -->
 
 <section class="final">
-
-<h1>❤️ Forever नोबल & प्रदिप ❤️</h1>
-
-<p>
-“तू माझ्या आयुष्यात आलीस,
-आणि माझं आयुष्य फक्त आयुष्य राहिलं नाही...
-ते एक सुंदर प्रेमकथेत बदललं.”
-</p>
-
-<div class="final-date">
-१२ • १० • २०२६
-</div>
-
-<p>
-Happy 1st Anniversary, My Love 💍❤️
-</p>
-
+ <h1>❤️ Forever नोबल & प्रदिप ❤️</h1>
+ <p>“तू माझ्या आयुष्यात आलीस, आणि माझं आयुष्य फक्त आयुष्य राहिलं नाही... ते एक सुंदर प्रेमकथेत बदललं.”</p>
+ <div class="final-date">१२ • १० • २०२६</div>
+ <p>Happy 1st Anniversary, My Love 💍❤️</p>
 </section>
 
-
 <footer>
-
-<p>Made with ❤️ specially for नोबल</p>
-
-<p>नोबल ❤️ प्रदिप</p>
-
-<p>Our First Anniversary • 12 October 2026</p>
-
+ <p>Made with ❤️ specially for नोबल</p>
+ <p>नोबल ❤️ प्रदिप</p>
+ <p>Our First Anniversary • 12 October 2026</p>
 </footer>
 
-
 <script>
+/* COUNTDOWN — 12 October 2026, 00:00 local time */
+const anniversaryDate = new Date("2026-10-12T00:00:00");
 
-/* SONG */
+function updateCountdown(){
+ const now = new Date();
+ const diff = anniversaryDate - now;
+ if(diff <= 0){
+   document.getElementById("days").textContent="00";
+   document.getElementById("hours").textContent="00";
+   document.getElementById("minutes").textContent="00";
+   document.getElementById("seconds").textContent="00";
+   document.getElementById("anniversaryLive").style.display="block";
+   document.querySelector("#countdown + *");
+   return;
+ }
+ const d=Math.floor(diff/86400000);
+ const h=Math.floor((diff/3600000)%24);
+ const m=Math.floor((diff/60000)%60);
+ const s=Math.floor((diff/1000)%60);
+ document.getElementById("days").textContent=String(d).padStart(2,"0");
+ document.getElementById("hours").textContent=String(h).padStart(2,"0");
+ document.getElementById("minutes").textContent=String(m).padStart(2,"0");
+ document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+/* 12 OCTOBER SPECIAL AUTOMATIC MODE */
+function specialDayMode(){
+ const now=new Date();
+ const y=now.getFullYear(), m=now.getMonth()+1, d=now.getDate();
+ if(y===2026 && m===10 && d===12){
+   document.body.classList.add("special-day");
+   document.getElementById("anniversaryLive").style.display="block";
+   launchCelebration();
+ }
+}
+specialDayMode();
+
+let celebrationStarted=false;
+function launchCelebration(){
+ if(celebrationStarted)return;
+ celebrationStarted=true;
+ for(let i=0;i<70;i++){
+  setTimeout(()=>{
+   const e=document.createElement("div");
+   e.textContent=["❤️","💕","💖","🌹","✨","🎉"][Math.floor(Math.random()*6)];
+   e.style.position="fixed";
+   e.style.left=Math.random()*100+"%";
+   e.style.top="-30px";
+   e.style.zIndex="1000";
+   e.style.fontSize=(18+Math.random()*25)+"px";
+   e.style.transition="transform 4s linear,opacity 4s";
+   document.body.appendChild(e);
+   requestAnimationFrame(()=>{e.style.transform="translateY(110vh) rotate(360deg)";e.style.opacity="0"});
+   setTimeout(()=>e.remove(),4200);
+  },i*70);
+ }
+}
+
+/* PHOTO LIGHTBOX */
+function openPhoto(src){
+ document.getElementById("lightboxImg").src=src;
+ document.getElementById("lightbox").classList.add("active");
+}
+function closePhoto(e){
+ if(e.target.id==="lightbox" || e.target.classList.contains("close-lightbox")){
+   document.getElementById("lightbox").classList.remove("active");
+ }
+}
+
+/* MUSIC PLAYER */
+const song=document.getElementById("loveSong");
+const songPhoto=document.getElementById("songPhoto");
+const progressBar=document.getElementById("progressBar");
 
 function playSong(){
-
-    const song=document.getElementById("loveSong");
-    const photo=document.getElementById("songPhoto");
-
-    song.play();
-    photo.style.animationPlayState="running";
+ song.play();
+ songPhoto.style.animationPlayState="running";
 }
-
 function pauseSong(){
+ song.pause();
+ songPhoto.style.animationPlayState="paused";
+}
+function restartSong(){
+ song.currentTime=0;
+ song.play();
+ songPhoto.style.animationPlayState="running";
+}
+song.addEventListener("timeupdate",()=>{
+ if(song.duration){
+   progressBar.style.width=(song.currentTime/song.duration*100)+"%";
+ }
+ document.getElementById("currentTime").textContent=formatTime(song.currentTime);
+});
+song.addEventListener("loadedmetadata",()=>{
+ document.getElementById("duration").textContent=formatTime(song.duration);
+});
+song.addEventListener("ended",()=>songPhoto.style.animationPlayState="paused");
 
-    const song=document.getElementById("loveSong");
-    const photo=document.getElementById("songPhoto");
-
-    song.pause();
-    photo.style.animationPlayState="paused";
+function formatTime(sec){
+ if(!isFinite(sec))return"0:00";
+ const m=Math.floor(sec/60);
+ const s=Math.floor(sec%60).toString().padStart(2,"0");
+ return m+":"+s;
+}
+function seekSong(e){
+ if(!song.duration)return;
+ const rect=e.currentTarget.getBoundingClientRect();
+ song.currentTime=((e.clientX-rect.left)/rect.width)*song.duration;
 }
 
+/* LETTER */
+function openLetter(){
+ document.getElementById("envelope").style.display="none";
+ document.getElementById("letterContent").classList.add("open");
+}
 
 /* SURPRISE */
-
 function openGift(){
-
-    const message=document.getElementById("surpriseMessage");
-
-    message.style.display="block";
-
-    for(let i=0;i<35;i++){
-
-        const heart=document.createElement("div");
-
-        heart.innerHTML=["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
-
-        heart.style.position="fixed";
-        heart.style.left=Math.random()*100+"%";
-        heart.style.top="50%";
-        heart.style.fontSize=(18+Math.random()*30)+"px";
-        heart.style.zIndex="200";
-        heart.style.transition="3s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-
-            heart.style.top=Math.random()*100+"%";
-            heart.style.left=Math.random()*100+"%";
-            heart.style.opacity="0";
-
-        },100);
-
-        setTimeout(()=>{
-            heart.remove();
-        },3200);
-    }
+ document.getElementById("surpriseMessage").classList.add("show");
+ for(let i=0;i<45;i++){
+  setTimeout(()=>{
+   const heart=document.createElement("div");
+   heart.textContent=["❤️","💕","💗","💖","✨"][Math.floor(Math.random()*5)];
+   heart.style.position="fixed";
+   heart.style.left=Math.random()*100+"%";
+   heart.style.top="50%";
+   heart.style.fontSize=(18+Math.random()*30)+"px";
+   heart.style.zIndex="1000";
+   heart.style.transition="3s";
+   document.body.appendChild(heart);
+   setTimeout(()=>{
+    heart.style.top=Math.random()*100+"%";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.opacity="0";
+   },100);
+   setTimeout(()=>heart.remove(),3200);
+  },i*35);
+ }
 }
-
 </script>
 
 </body>
